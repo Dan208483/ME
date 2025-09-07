@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nosotros | MovieWorld</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <h1>MovieWorld</h1>
+</header>
+
+<nav class="nav-menu" id="navMenu">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+    </ul>
+</nav>
+
+<section class="section-info">
+    <h2>Sobre Nosotros</h2>
+    <p>Somos una plataforma dedicada a compartir las mejores películas,
+       series y experiencias del cine con todos los amantes del séptimo arte.</p>
+</section>
+
+<script>
+    const menuIcon = document.querySelector('.menu-icon');
+    const navMenu = document.getElementById('navMenu');
+    menuIcon.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+    });
+</script>
+</body>
+</html>
