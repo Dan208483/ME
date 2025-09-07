@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto | MovieWorld</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <h1>MovieWorld</h1>
+</header>
+
+<nav class="nav-menu" id="navMenu">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+    </ul>
+</nav>
+
+<section class="contact-section">
+    <h2>Ponerse en contacto</h2>
+    <p>Déjanos tu mensaje y te responderemos lo antes posible.</p>
+    
+    <form action="#" class="contact-form">
+        <input type="text" placeholder="Nombre completo" required>
+        <input type="email" placeholder="Tu correo electrónico" required>
+        <textarea placeholder="Escribe tu mensaje..." required></textarea>
+        <button type="submit">Enviar mensaje</button>
+    </form>
+</section>
+
+<script>
+    const menuIcon = document.querySelector('.menu-icon');
+    const navMenu  = document.getElementById('navMenu');
+    menuIcon.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+    });
+</script>
+</body>
+</html>
