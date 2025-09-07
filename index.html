@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ElectronicMusic</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <h1>ElectronicMusic</h1>
+</header>
+
+<nav class="nav-menu" id="navMenu">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="calculadora.html">Calculadora</a></li>
+    </ul>
+</nav>
+
+<section class="movie-grid">
+    <div class="movie-item"><img src="img/jumanji.jpg" alt="Jumanji"></div>
+    <div class="movie-item"><img src="img/civilwar.jpg" alt="Civil War"></div>
+    <div class="movie-item"><img src="img/lightyear.jpg" alt="Lightyear"></div>
+    <div class="movie-item"><img src="img/megan.jpg" alt="Megan"></div>
+    <div class="movie-item"><img src="img/harrypotter.jpg" alt="Harry Potter"></div>
+    <div class="movie-item"><img src="img/toystory4.jpg" alt="Toy Story 4"></div>
+    <div class="movie-item"><img src="img/gladiator.jpg" alt="Gladiator"></div>
+    <div class="movie-item"><img src="img/rambo.jpg" alt="Rambo"></div>
+</section>
+
+<script>
+    const menuIcon = document.querySelector('.menu-icon');
+    const navMenu  = document.getElementById('navMenu');
+
+    menuIcon.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+    });
+</script>
+</body>
+</html>
