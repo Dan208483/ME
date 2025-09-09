@@ -11,7 +11,7 @@ document
     const ope2 = parseFloat(document.getElementById("txt_operador2").value);
     const operacion = document.getElementById("sel_operacion").value;
     
-    let calculo = 0.0;
+    let calculo;
     if (operacion == "+") {
       calculo = ope1 + ope2;
     } else if (operacion == "-") {
@@ -19,28 +19,11 @@ document
     } else if (operacion == "*") {
       calculo = ope1 * ope2;
     } else if (operacion == "/") {
-      if (ope2 != 0) 
-        calculo = ope1 / ope2;
-      } else {
-        calculo = "Error: división por 0"
-      }
-    } 
+      calculo = ope2 !== 0 ? ope1 / ope2 : "Error: división por 0"
+    }
 
-  document.getElementById("lb_resultado").textContent =
-    "Resultado: " + calculo;
+    document.getElementById("lb_resultado").textContent = calculo;
   });
-
-function fibonacci(n) {
-  if (n === 0) return 0n;
-  if (n === 1) return 1n;
-  let a = 0n, b = 1n;
-  for (let i = 2; i <= n; i++) {
-    const c = a + b;
-    a = b;
-    b = c;
-  }
-  return b;
-}
 
 function fibonacciSecuencia(n) {
   let secuencia = [];
@@ -53,7 +36,8 @@ function fibonacciSecuencia(n) {
   return secuencia;
 }
 
-document.getElementById("fibonacci-form")
+document
+  .getElementById("fibonacci-form")
   .addEventListener("submit", function(e) {
    e.preventDefault();
    const n = parseInt(document.getElementById("txt_fibonacci").value);
@@ -66,8 +50,8 @@ document.getElementById("fibonacci-form")
 
   const secuencia = fibonacciSecuencia(n);
   const valor = secuencia[n];
+  document.getElementById("Ib_fibonacci").textContent =
+    `F(${n}) = ${valor}`;
+});
 
-  document.getElementById("Ib_fibonacci")-innerHTML =
-    `<strong>F(${n}) = ${valor}</strong><br>` +
-    `Sucesión: ${secuencia.join(", ")}`;
   });
