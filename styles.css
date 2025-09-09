@@ -1,165 +1,121 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: monospace;
-}
-
-body {
-    background: #a69f9f;
-}
-
-/* Header */
+/* ===== Header ===== */
 header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px 40px;
-    border-bottom: 3px solid #000;
+  background: #111;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 header h1 {
-    font-size: 2.5rem;
-    text-align: center;
-    flex: 1;
+  font-size: 1.5rem;
 }
 
+/* ===== Menú hamburguesa ===== */
 .menu-icon {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  width: 30px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
 }
 
 .menu-icon span {
-    width: 35px;
-    height: 4px;
-    background: #fff;
-    display: block;
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: white;
+  border-radius: 4px;
 }
 
-/* Menú desplegable */
+/* ===== Nav menú ===== */
 .nav-menu {
-    display: none;
-    background: #fff;
-    border-bottom: 2px solid #000;
+  display: none;
+  flex-direction: column;
+  background: #222;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 200px;
+  border-radius: 6px;
+  padding: 1rem;
 }
 
 .nav-menu ul {
-    list-style: none;
-    padding: 10px 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-menu li {
-    margin-bottom: 10px;
+  margin: 10px 0;
 }
 
 .nav-menu a {
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.nav-menu a:hover {
+  color: #00c3ff;
 }
 
 .nav-menu.show {
-    display: block;
+  display: flex;
 }
 
-/* Grid de películas */
-.movie-grid {
-    padding: 30px 50px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    justify-items: center;
+/* ===== Formularios ===== */
+.calculadora-form, .fibonacci-form {
+  background: #f9f9f9;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  max-width: 400px;
 }
 
-.movie-item img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 15px;
+.calculadora-form h2, .fibonacci-form h2 {
+  text-align: center;
+  margin-bottom: 15px;
 }
 
-/* Secciones de texto */
-.section-info {
-    padding: 50px;
-    text-align: center;
-    background-color: #fff;
-    border-top: 3px solid #000;
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
-.section-info h2 {
-    margin-bottom: 15px;
-    font-size: 2rem;
+input, select, button {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
 }
 
-.about-section {
-    padding: 80px 30px;
-    text-align: center;
-    background-color: #f5f5f5;
+button {
+  margin-top: 15px;
+  background: #00c3ff;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-.about-section h2 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
+button:hover {
+  background: #008ecc;
 }
 
-.about-section p {
-    max-width: 700px;
-    margin: auto;
-    line-height: 1.6;
-    font-size: 1.1rem;
-}
-
-.contact-section {
-    padding: 60px 30px;
-    text-align: center;
-    background-color: #f5f5f5;
-}
-
-.contact-section h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.contact-section p {
-    margin-bottom: 30px;
-    font-size: 1rem;
-}
-
-.contact-form {
-    max-width: 500px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    padding: 12px;
-    border: 2px solid #000;
-    border-radius: 8px;
-    font-size: 1rem;
-}
-
-.contact-form textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.contact-form button {
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    background: #000;
-    color: #fff;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: transform .2s;
-}
-
-.contact-form button:hover {
-    transform: scale(1.05);
+#lb_resultado, #lb_fibonacci {
+  display: block;
+  margin-top: 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
 }
