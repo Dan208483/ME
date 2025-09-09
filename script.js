@@ -1,8 +1,5 @@
-document.getElementById("menu-icon").addEventListener("click", function () {
-
+document.getElementById("menu-icon")?.addEventListener("click", function () {
   const navMenu = document.getElementById("menu");
-
-
   menu.classList.toggle("hidden");
 });
 
@@ -24,8 +21,9 @@ document
     } else if (operacion == "/") {
       if (ope2 != 0) 
         calculo = ope1 / ope2;
-      else 
+      } else {
         calculo = "Error: división por 0"
+      }
     } 
 
   document.getElementById("lb_resultado").textContent =
@@ -44,14 +42,21 @@ function fibonacci(n) {
   return b;
 }
 
-document.getElementById("fibonacci-form").addEventListener("submit", function(e) {
+document.getElementById("fibonacci-form")
+  .addEventListener("submit", function(e) {
   e.preventDefault();
   const n = parseInt(document.getElementById("txt_fibonacci").value);
 
   if (isNaN(n) || n < 0) {
-    document.getElementById("lb_fibonacci").textContent = "Ingrese un número válido (>=0).";
+    document.getElementById("lb_fibonacci").textContent = 
+      "Ingrese un número válido (>=0).";
     return;
   }
+
+  const resultado = fibonacci(n);
+  document.getElementById("lb_fibonacci").textContent =
+    "F(" + n + ") = " + resultado.toString();
+});
 
   const resultado = fibonacci(n);
   document.getElementById("lb_fibonacci").textContent = "F(" + n + ") = " + resultado.toString();
