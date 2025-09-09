@@ -1,10 +1,8 @@
-// Selecciona el elemento con el id "menu-icon" y agrega un evento de clic
 document.getElementById("menu-icon").addEventListener("click", function () {
-  // Dentro del evento de clic, selecciona el elemento con el id "menu"
-  const menu = document.getElementById("menu");
 
-  // Alterna la clase "hidden" en el elemento "menu"
-  // Si la clase "hidden" está presente, la elimina; si no está, la agrega
+  const navMenu = document.getElementById("menu");
+
+
   menu.classList.toggle("hidden");
 });
 
@@ -26,11 +24,35 @@ document
     } else if (operacion == "/") {
       if (ope2 != 0) 
         calculo = ope1 / ope2;
-    } else {
-      calculo = "Error: división por 0"
-    }
-  } 
+      else 
+        calculo = "Error: división por 0"
+    } 
 
   document.getElementById("lb_resultado").textContent =
     "Resultado: " + calculo;
   });
+
+function fibonacci(n) {
+  if (n === 0) return 0n;
+  if (n === 1) return 1n;
+  let a = 0n, b = 1n;
+  for (let i = 2; i <= n; i++) {
+    const c = a + b;
+    a = b;
+    b = c;
+  }
+  return b;
+}
+
+document.getElementById("fibonacci-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const n = parseInt(document.getElementById("txt_fibonacci").value);
+
+  if (isNaN(n) || n < 0) {
+    document.getElementById("lb_fibonacci").textContent = "Ingrese un número válido (>=0).";
+    return;
+  }
+
+  const resultado = fibonacci(n);
+  document.getElementById("lb_fibonacci").textContent = "F(" + n + ") = " + resultado.toString();
+});
