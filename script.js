@@ -42,10 +42,21 @@ function fibonacci(n) {
   return b;
 }
 
+function fibonacciSecuencia(n) {
+  let secuencia = [];
+  if (n >= 0) secuencia.push(0);
+  if (n >= 1) secuencia.push(1);
+
+  for (let i = 2; i <= n; i++) {
+    secuencia.push(secuencia[i - 1] + secuencia[i -2]);
+  }
+  return secuencia;
+}
+
 document.getElementById("fibonacci-form")
   .addEventListener("submit", function(e) {
-  e.preventDefault();
-  const n = parseInt(document.getElementById("txt_fibonacci").value);
+   e.preventDefault();
+   const n = parseInt(document.getElementById("txt_fibonacci").value);
 
   if (isNaN(n) || n < 0) {
     document.getElementById("lb_fibonacci").textContent = 
@@ -53,11 +64,10 @@ document.getElementById("fibonacci-form")
     return;
   }
 
-  const resultado = fibonacci(n);
-  document.getElementById("lb_fibonacci").textContent =
-    "F(" + n + ") = " + resultado.toString();
-});
+  const secuencia = fibonacciSecuencia(n);
+  const valor = secuencia[n];
 
-  const resultado = fibonacci(n);
-  document.getElementById("lb_fibonacci").textContent = "F(" + n + ") = " + resultado.toString();
-});
+  document.getElementById("Ib_fibonacci")-innerHTML =
+    `<strong>F(${n}) = ${valor}</strong><br>` +
+    `Sucesión: ${secuencia.join(", ")}`;
+  });
