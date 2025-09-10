@@ -1,10 +1,9 @@
 document.getElementById("menu-icon")?.addEventListener("click", function () {
   const navMenu = document.getElementById("menu");
-  menu.classList.toggle("hidden");
+  navMenu.classList.toggle("show");
 });
 
-document
-  .getElementById("calculadora-form")
+document.getElementById("calculadora-form")
   .addEventListener("submit", function (e) {
     e.preventDefault();
     const ope1 = parseFloat(document.getElementById("txt_operador1").value);
@@ -12,14 +11,10 @@ document
     const operacion = document.getElementById("sel_operacion").value;
     
     let calculo;
-    if (operacion == "+") {
-      calculo = ope1 + ope2;
-    } else if (operacion == "-") {
-      calculo = ope1 - ope2;
-    } else if (operacion == "*") {
-      calculo = ope1 * ope2;
-    } else if (operacion == "/") {
-      calculo = ope2 !== 0 ? ope1 / ope2 : "Error: división por 0"
+    if (operacion == "+") calculo = ope1 + ope2;
+    else if (operacion == "-") calculo = ope1 - ope2;
+    else if (operacion == "*") calculo = ope1 * ope2;
+    else if (operacion == "/") calculo = ope2 !== 0 ? ope1 / ope2 : "Error: división por 0"
     }
 
     document.getElementById("lb_resultado").textContent = calculo;
@@ -36,22 +31,17 @@ function fibonacciSecuencia(n) {
   return secuencia;
 }
 
-document
-  .getElementById("fibonacci-form")
-  .addEventListener("submit", function(e) {
+document.getElementById("fibonacci-form")
+ .addEventListener("submit", function(e) {
    e.preventDefault();
    const n = parseInt(document.getElementById("txt_fibonacci").value);
 
   if (isNaN(n) || n < 0) {
-    document.getElementById("lb_fibonacci").textContent = 
-      "Ingrese un número válido (>=0).";
+    document.getElementById("lb_fibonacci").textContent = "Ingrese un número válido (>=0).";
     return;
   }
 
   const secuencia = fibonacciSecuencia(n);
   const valor = secuencia[n];
-  document.getElementById("Ib_fibonacci").textContent =
-    `F(${n}) = ${valor}`;
+  document.getElementById("lb_fibonacci").textContent = `F(${n}) = ${valor}`;
 });
-
-  });
