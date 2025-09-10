@@ -185,11 +185,11 @@ header h1 {
 
 .calculadora-form input,
 .calculadora-form select,
-.fibonacci-form inout,
+.fibonacci-form input,
 button {
     width: 100%;
     padding: 8px;
-    margin-top: 5gx;
+    margin-top: 5px;
     border: 2px solid #000;
     border-radius: 6px;
     font-size: 1rem;
