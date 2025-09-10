@@ -225,3 +225,21 @@ button:hover {
     padding: 6px 10px;
     border-radius: 6px;
 }
+
+.resultado-box {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: #f0f0f0;
+    border: 2px solid #000;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    min-width: 140px;
+}
+
+.resultado-box span {
+    font-weight: normal;
+    color: #333;
+}
