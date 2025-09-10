@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Calculadora | Electronic Music</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Calculadora | Electronic Music</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  
   <header>
     <div class="menu-icon">
       <span></span>
@@ -24,51 +25,43 @@
     </ul>
   </nav>
 
-    <div class="calculadora-form">
+    <section class="section-info">
       <h2>Calculadora</h2>
       <form id="calculadora-form">
         <label for="txt_operador1">Operador1:</label>
-        <input type="text" id="txt_operador1" name="txt_operador1" required />
+        <input type="text" id="txt_operador1" name="txt_operador1" />
 
         <label for="txt_operador2">Operador2:</label>
-        <input type="text" id="txt_operador2" name="txt_operador2" required />
+        <input type="text" id="txt_operador2" name="txt_operador2" />
 
-  <label for="sel_operacion">Operación:</label>
-  <select id="sel_operacion" name="sel_operacion">
-    <option value="+">Suma</option>
-    <option value="-">Resta</option>
-    <option value="*">Multiplicacion</option>
-    <option value="/">Division</option>
-  </select>
+        <label for="sel_operacion">Operación:</label>
+        <select id="sel_operacion" name="sel_operacion">
+          <option value="+">Suma</option>
+          <option value="-">Resta</option>
+          <option value="*">Multiplicacion</option>
+          <option value="/">Division</option>
+        </select>
         
-   <div class="resultado-linea">
-     <button type="submit">Calcular</button>
-     <label id="lb_resultado"></label>
-   </div>
- </form>
-</div>
+        <div class="resultado-linea">
+          <button type="submit">Calcular</button>
+          <label id="lb_resultado"></label>
+        </div>
+      </form>
+    </section>
 
-   <div class="fibonacci-form">
-    <h2>Fibonacci</h2>
-    <form id="fibonacci-form">
-      <label for="txt_fibonacci">Número n:</label>
-      <input type="number" id="txt_fibonacci" name="txt_fibonacci" required />
+    <section class="section-info">
+      <h2>Fibonacci</h2>
+      <form id="fibonacci-form">
+        <label for="txt_fibonacci">Número n:</label>
+        <input type="number" id="txt_fibonacci" name="txt_fibonacci" />
       
-  <div class="resultado-linea">
-      <button type="submit">Calcular Fibonacci</button>
-      <label id="lb_fibonacci"></label>
-    </form>
-  </div>
-
-<script src="script.js"></script>
-<script>
-  const menuIcon = document.querySelector('.menu-icon');
-  const navMenu = document.getElementyById('menu');
-  menuIcon.addEventListener('click', () => {
-    navMenu.classList.toggle('show');
-  });
-</script>
-</body>
-</html>    
-</body>
-</html>
+        <div class="resultado-linea">
+          <button type="submit">Calcular Fibonacci</button>
+          <label id="lb_fibonacci"></label>
+        </div>
+      </form>
+    </section>
+  
+    <script src="script.js"></script>   
+ </body>
+ </html>
