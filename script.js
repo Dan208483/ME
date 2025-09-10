@@ -1,20 +1,31 @@
-document.getElementById("menu-icon")?.addEventListener("click", function () {
+document.getElementById("menu-icon").addEventListener("click", function () {
   const navMenu = document.getElementById("menu");
   navMenu.classList.toggle("show");
 });
 
-document.getElementById("calculadora-form")
+document
+  .getElementById("calculadora-form")
   .addEventListener("submit", function (e) {
     e.preventDefault();
     const ope1 = parseFloat(document.getElementById("txt_operador1").value);
     const ope2 = parseFloat(document.getElementById("txt_operador2").value);
     const operacion = document.getElementById("sel_operacion").value;
+
+    if (isNaN(ope1) || isNaN(ope2)) {
+      document.getElementById("lb_resultado").textContent =
+        "Ingrese números válidos.";
+      return;
+    }
     
     let calculo;
-    if (operacion == "+") calculo = ope1 + ope2;
-    else if (operacion == "-") calculo = ope1 - ope2;
-    else if (operacion == "*") calculo = ope1 * ope2;
-    else if (operacion == "/") calculo = ope2 !== 0 ? ope1 / ope2 : "Error: división por 0"
+    if (operacion == "+") {
+      calculo = ope1 + ope2;
+    } else if (operacion == "-") {
+      calculo = ope1 - ope2;
+    } else if (operacion == "*") {
+      calculo = ope1 * ope2;
+    } else if (operacion == "/") {
+      calculo = ope2 !== 0 ? ope1 / ope2 : "Error: división por 0"
     }
 
     document.getElementById("lb_resultado").textContent = calculo;
@@ -37,7 +48,8 @@ document.getElementById("fibonacci-form")
    const n = parseInt(document.getElementById("txt_fibonacci").value);
 
   if (isNaN(n) || n < 0) {
-    document.getElementById("lb_fibonacci").textContent = "Ingrese un número válido (>=0).";
+    document.getElementById("lb_fibonacci").textContent = 
+      "Ingrese un número válido (>=0).";
     return;
   }
 
