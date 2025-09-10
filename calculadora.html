@@ -8,7 +8,7 @@
 <body>
   
   <header>
-    <div class="menu-icon">
+    <div class="menu-icon" id="menu-icon">
       <span></span>
       <span></span>
       <span></span>
@@ -25,6 +25,7 @@
     </ul>
   </nav>
 
+  <main class="calculadora-contenedor">
     <section class="section-info">
       <h2>Calculadora</h2>
       <form id="calculadora-form">
@@ -38,7 +39,7 @@
         <select id="sel_operacion" name="sel_operacion">
           <option value="+">Suma</option>
           <option value="-">Resta</option>
-          <option value="*">Multiplicacion</option>
+          <option value="*">Multiplicación</option>
           <option value="/">Division</option>
         </select>
         
@@ -49,7 +50,7 @@
       </form>
     </section>
 
-    <section class="section-info">
+    <section class="fibonacci-form">
       <h2>Fibonacci</h2>
       <form id="fibonacci-form">
         <label for="txt_fibonacci">Número n:</label>
@@ -61,6 +62,7 @@
         </div>
       </form>
     </section>
+  </main>
   
     <script src="script.js"></script>   
  </body>
